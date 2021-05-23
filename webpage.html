@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="webpage.css">
+    <title>My Contacts</title>
+</head>
+<body>
+    <div id="container">
+
+        <div class="contact-box">
+
+            <div class="contact-logo"><img src="images/contact-64.png" alt=""></div>
+
+            <div class="menu">
+                <span class="search-contact">
+                    <label for="input" class="search"><img src="images/search-28.png" alt=""></label>
+                    <input type="text" id="input" placeholder="Search">
+                </span>
+                <span class="add-contact"><img src="images/plus-28.png" alt=""></span>
+            </div>
+
+            <div class="content">
+                <!-- contacts will be added here -->
+            </div> 
+
+        </div>
+
+        <div class="addContact">
+
+            <div class="close"><img src="images/close-50.png" alt=""></div>
+
+            <div class="add-logo"><img src="images/phone-96.png" alt=""></div>
+
+            
+            <form action="" id="my-form">
+                <input type="name" id="name" >
+                <label for="name"><img src="images/name-24.png" alt=""></label>
+
+                <input type="phone" id="phone">
+                <label for="phone"><img src="images/phone-24.png" alt=""></label>
+
+                <input type="email" id="email">
+                <label for="email"><img src="images/mail-24.png" alt=""></label>
+
+                <button type="submit"><img src="images/submit-35.png" alt=""></button>
+            </form>
+
+            <div class="alert">Contact Already Exists</div>
+
+        </div>
+
+        <div class="show-contact">
+
+            <div class="close"><img src="images/close-50.png" alt=""></div>
+
+            <div class="contact-image"><img src="images/profile-100.png" alt=""></div>
+
+            <h3 class="name">Name</h3>
+
+            <div class="details">
+
+                <div class="phone">
+                    <img src="images/phone-24.png" alt="">
+                    <span class="number" >Number</span>
+                </div>
+
+                <div class="mail">
+                    <img src="images/mail-24.png" alt="">
+                    <span class="email" >Email</span>
+                </div>
+
+            </div>
+
+            <button class="delete"><img src="images/delete-48.png" alt=""></button>
+
+        </div>
+
+    </div>
+
+    
+    <script src="webpage.js"></script>
+</body>
+</html>

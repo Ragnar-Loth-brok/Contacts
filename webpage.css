@@ -1,0 +1,453 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: comic sans ms;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#a1c4df, #c2e9fb);
+    background-repeat: no-repeat;
+    /* perspective: 1800px; */
+    /* perspective-origin: 25% 50%; */
+
+    
+}
+.contact-box{
+    /* display: none; */
+    transform: rotateZ(0deg) skewX(0deg) rotateY(0deg);
+    width: 30vw;
+    height: 85vh;
+    padding-top: 100px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+    box-shadow: 2px 20px 10px 5px rgba(0, 0, 0, 0.2);
+    animation: rotateboxleft 1s ease-in-out;
+    transition: 0.5s;
+    /* perspective: 1000px;
+    perspective-origin: 50% 50%; */
+}
+.contact-box.init{
+    transform: rotateZ(30deg) skewX(25deg) rotateY(90deg);
+    transform-origin: top left;
+} 
+.contact-box .menu{
+    position: relative;
+    margin-top: 50px;
+    min-height: 80px;
+}
+.contact-box input{
+    display: none;
+}
+
+.contact-box .input.init{
+    display: inline;
+    border: none;
+    min-width: 0px;
+    height: 30px;
+    outline: none;
+    margin: 0px 10px 0px 10px;
+    transform: translateY(-10px);
+    box-shadow: 0 1px 10px 5px #45b6fe;
+    color: #454545;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding-left: 15px;
+    transition: 1s;
+    animation: inputgrow 1s linear;
+}
+.contact-box .search, .add-contact{
+    padding: 18px 5px 2px 10px;
+    border-radius: 20px 1px 1px 20px;
+    box-shadow: 0 1px 5px 1px #45b6fe;
+    background: #45b6fe;
+    cursor: pointer;
+}
+.contact-box .search:hover{
+    border-radius: 20px 20px 1px 1px;
+    transition: 0.5s;
+}
+.contact-box .add-contact{
+    padding: 18px 10px 2px 5px;
+    border-radius: 1px 20px 20px 1px;
+}
+.contact-box .add-contact:hover{
+    border-radius: 20px 20px 1px 1px;
+    padding: 18px 8px 2px 8px;
+    transition: 0.5s;
+}
+.contact-box .content{
+    height: 310px;
+    overflow: scroll;
+    margin: 20px 10px;
+    padding: 40px 0px;
+    text-align: left;
+    box-shadow: 0 1px 10px 5px #45b6fe;
+}
+.contact-box .content h2{
+    display: inline;
+    margin-left: 20px;
+    padding: 10px 20px;
+    background: rgba(0, 153, 204, 0.5);
+    box-shadow: 0 1px 10px 5px #45b6fe;
+    border-radius: 40px;
+    font-weight: 400;
+}
+.contact-box .content div{
+    margin: 20px 50px;
+}
+.contact-box .content span{
+    text-transform: capitalize;
+    display: block;
+    font-weight: 500;
+    margin-top: 10px;
+    color:rgba(0, 0, 0,0.8);
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 5px 30px;
+    background: linear-gradient(to left, #7ee8fa, #eec0c6);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.contact-box .content span:nth-child(even){
+    background: linear-gradient(to left, #3eadcf, #abe9cd);
+}
+
+.contact-box .content span:nth-child(even):hover{
+    background: linear-gradient(to right, #3eadcf, #abe9cd, #3eadcf);
+    padding-left: 50px;
+
+}
+.contact-box .content span:nth-child(odd):hover{
+    background: linear-gradient(to right, #7ee8fa, #eec0c6, #7ee8fa);
+    padding-left: 50px;
+}
+
+
+
+
+.addContact{
+    transform: rotateZ(-30deg) skewX(-25deg) rotateY(-90deg);
+    transform-origin: top right;
+    position: absolute;
+    top: 8vh;
+    left: 35vw;
+    width: 30vw;
+    height: 85vh;
+    padding: 10px 20px 20px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+    box-shadow: 2px 20px 10px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+.addContact.init{
+    transform: rotateZ(0deg) skewX(0deg) rotateY(0deg);
+    animation: rotateboxright 1s ease-in-out;
+}
+.addContact.init.hover{
+    transform: rotateZ(-5deg) rotateY(0deg);
+    transition: 0.5s;
+}
+.addContact .close{
+    float: right;
+    transform-origin: top center;
+    animation: close 0.5s infinite linear;
+    cursor: pointer;
+}
+
+.addContact .add-logo{
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+.addContact #my-form{
+    margin-top: 50px;
+}
+.addContact #my-form input{
+    display: block;
+    border: none;
+    width: 300px;
+    height: 30px;
+    outline: none;
+    margin: 20px auto 40px 70px;
+    box-shadow: 0 1px 10px 5px #45b6fe;
+    color: #454545;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding-left: 44px;
+}
+.addContact #my-form label{
+    position: absolute;
+    transform: translateX(-133px) translateY(-68px);
+    transition: 0.5s;
+}
+
+.addContact #my-form input:focus + label{
+    transform: translateX(-145px) translateY(-68px);
+}
+.addContact #my-form input:focus{
+    padding-left: 30px;
+    box-shadow: 0 1px 15px 10px #45b6fe;
+}
+
+.addContact #my-form button{
+    display: block;
+    margin: 50px auto;
+    padding: 10px 80px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 10px 5px #45b6fe;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.addContact #my-form button:hover img{
+    animation: bouncebutton 1s linear;
+
+}
+.addContact #my-form button:hover{
+    box-shadow: 0 1px 20px 10px #00a86b;
+    background: rgba(0, 168, 107, 0.1);
+}
+.addContact .alert{
+    height: 40px;
+    font-size: 20px;
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;    
+    padding-top: 5px;
+    color: #fa8072;
+    animation: forminput 1s linear infinite;
+}
+
+
+
+
+
+.show-contact{
+    transform: rotateZ(-30deg) skewX(-25deg) rotateY(-90deg);
+    transform-origin: top right;
+    position: absolute;
+    top: 8vh;
+    left: 35vw;
+    width: 30vw;
+    height: 85vh;
+    padding: 10px 20px 20px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+    box-shadow: 2px 20px 10px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.show-contact.init{
+    transform: rotateZ(0deg) skewX(0deg) rotateY(0deg) scale(1);
+    animation: rotateboxright 1s ease-in-out;
+}
+.show-contact.init.hover{
+    transform: rotateZ(-5deg) rotateY(0deg);
+    transition: 0.5s;
+}
+.show-contact .close{
+    float: right;
+    transform-origin: top center;
+    animation: close 0.5s infinite linear;
+    cursor: pointer;
+}
+.show-contact .contact-image{
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+.show-contact h3{
+    text-transform: capitalize;
+    display: inline;
+    box-shadow: 0 1px 10px 5px #45b6fe;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;    
+    padding: 10px 50px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.8);
+}
+.show-contact .details{
+    margin-top: 60px;
+    text-align: left;
+}
+.show-contact .details .phone, .show-contact .details .mail{
+    box-shadow: 0 1px 10px 5px #45b6fe;
+    border-radius: 20px;
+    margin-top: 30px;
+    height: 50px;
+}
+.show-contact .details img{
+    margin: 13px auto auto 20px;
+}
+.show-contact .details span{
+    position: absolute;
+    margin: 12px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.8);
+}
+.show-contact .delete{
+    margin: 50px auto;
+    padding: 10px 80px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 10px 5px #45b6fe;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.show-contact .delete:hover img{
+    animation: bouncebutton 1s linear;
+}
+.show-contact .delete:hover{
+    box-shadow: 0 1px 20px 10px #fa8072;
+}
+.show-contact .details .phone:hover, .show-contact .details .mail:hover, .show-contact .name:hover{
+    animation: showdetails 1s linear infinite;
+}
+
+@keyframes showdetails{
+    0%{
+        box-shadow: 0px 1px 15px 10px #45b6fe;
+    }
+    50%{
+        box-shadow: 0px 1px 10px 5px #45b6fe;
+    }
+    100%{
+        box-shadow: 0px 1px 15px 10px #45b6fe;
+    }
+}
+
+
+
+@keyframes rotateboxleft{
+    0%{
+        transform: roatateZ(0) rotateY(0);
+    }
+    30%{
+        transform: roatateZ(30deg) rotateY(45deg);
+    }
+    0%{
+        transform: roatateZ(30deg) rotateY(90deg);
+    }
+}
+
+@keyframes rotateboxright{
+    0%{
+        transform: roatateZ(-30deg) rotateY(-90deg);
+    }
+    30%{
+        transform: roatateZ(-30deg) rotateY(-45deg);
+    }
+    0%{
+        transform: roatateZ(0deg) rotateY(0deg);
+    }
+}
+
+@keyframes forminput{
+    0%{
+        box-shadow: 0px 1px 15px 10px #fa8072;
+    }
+    50%{
+        box-shadow: 0px 1px 10px 5px #fa8072;
+    }
+    100%{
+        box-shadow: 0px 1px 15px 10px #fa8072;
+    }
+}
+
+@keyframes bouncebutton{
+    20%,50%,80%,to{
+        transform: translateY(10px);
+    }
+    40%{
+        transform: translateY(-10px);
+    }
+    70%{
+        transform: translateY(-5px);
+    }
+    90%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+
+@keyframes close{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    25%{
+        transform: rotateZ(-5deg);
+    }
+    50%{
+        transform: rotateZ(0deg);
+    }
+    75%{
+        transform: rotateZ(5deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+
+}
+@keyframes bounce{
+    0%{
+        transform: translateY(10px);
+    }
+    20%,50%,80%,to{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-30px);
+    }
+    70%{
+        transform: translateY(-15px);
+    }
+    90%{
+        transform: translateY(-4px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes inputgrow{
+    0%{
+        width: 80px;
+    }
+    20%{
+        width: 160px;
+    }
+    30%{
+        width: 240px;
+    }
+    40%{
+        width: 200px;
+    }
+    50%{
+        width: 260px;
+    }
+    65%{
+        width: 200px;
+    }
+    85%{
+        width: 240px;
+    }
+    100%{
+        width: 240px;
+    }
+}
